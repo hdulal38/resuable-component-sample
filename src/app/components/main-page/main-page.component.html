@@ -1,0 +1,27 @@
+<div class="card mx-auto main-body">
+    <div class="card-body">
+        <h5 class="card-title">Reusable Component demo</h5>
+        <p class="card-text">Click the button to view and import data from csv files.</p>
+        <button href="#" class="btn btn-primary" (click)="importFromCsv()">Import from CSV</button>
+    </div>
+</div>
+<table class="table w-75 mx-auto my-3" *ngIf="importedData.length">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">LastName</th>
+            <th scope="col">Email</th>
+            <th scope="col">Role</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of importedData; let i=index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.first_name}}</td>
+            <td>{{item.last_name}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.role}}</td>
+        </tr>
+    </tbody>
+</table>

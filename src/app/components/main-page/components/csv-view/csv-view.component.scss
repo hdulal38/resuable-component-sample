@@ -1,0 +1,171 @@
+@import "src/assets/scss/variables";
+.button {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  align-items: center;
+  min-width: 70px;
+  justify-content: center;
+  background: $launcht-white 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 15px;
+  opacity: 1;
+  border: none;
+  color: $launcht-primary-color;
+  cursor: pointer;
+}
+
+.upload-button {
+  min-width: 175px;
+}
+
+.margin-left {
+  margin-left: 6%;
+}
+
+.stripped-table {
+  tr {
+    font-size: 14px;
+
+    td {
+      padding: 0.5rem 0;
+      padding-left: 1rem;
+    }
+  }
+
+  tr:nth-child(odd) {
+    background-color: $launcht-white-50;
+  }
+}
+.pre-upload {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  span {
+    font-size: 16px;
+    font-style: italic;
+  }
+  img {
+    width: 20px;
+  }
+}
+.overflow {
+  max-height: 50vh;
+  overflow: auto;
+
+  .csv-table {
+    width: 100%;
+
+    .table-header {
+      background-color: #dcddde;
+      font-size: 10px;
+      position: sticky;
+      top: 0;
+
+      td {
+        padding: 0.5rem 0;
+        padding-left: 1rem;
+      }
+    }
+
+    tbody {
+      // overflow: auto;
+      max-height: 50vh;
+    }
+  }
+}
+
+.modal-body {
+  font-size: 12px;
+  letter-spacing: 0px;
+  color: $launcht-grey-100;
+
+  .imported-file {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+
+  .import-div {
+    display: flex;
+    justify-content: space-between;
+    gap: 2%;
+    width: 95%;
+    margin: 0.5rem auto;
+    margin-bottom: 1rem;
+
+    .search-text {
+      width: 100%;
+      border: 1px solid $launcht-grey-100;
+      border-radius: 5px;
+      opacity: 1;
+    }
+
+    .modal-upload-button {
+      color: white;
+      background-color: $launcht-primary-color;
+      box-shadow: 0px 3px 6px #00000029;
+      border-radius: 30px;
+      opacity: 1;
+      padding: 0.25rem 2rem;
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem auto;
+  width: 95%;
+  a {
+    justify-self: flex-start;
+    font-size: 1rem;
+    text-decoration: none;
+    background-color: $launcht-primary-color;
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 15px;
+    box-shadow: 0px 3px 6px #00000029;
+  }
+
+  .modal-import {
+    color: white;
+    background-color: $launcht-primary-color;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 30px;
+    opacity: 1;
+    padding: 0.25rem 2rem;
+    font-size: 16px;
+    border: none;
+  }
+  .modal-import:disabled {
+    background-color: #57575729;
+  }
+}
+@media (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.no-products {
+  font-size: 24px;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: 2rem;
+}
+@import "src/assets/scss/variables";
+.modal-header {
+  border: none;
+  width: 95%;
+  margin: 0 auto;
+
+  .header-text {
+    color: $launcht-grey-100;
+    font-size: 14px;
+  }
+}

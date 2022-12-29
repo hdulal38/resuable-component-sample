@@ -1,0 +1,53 @@
+<div>
+    <div modal-header class="modal-header">
+        <div class="header-text">{{title}}</div>
+        <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+    </div>
+    <div class="p-0">
+        <div>
+            <div class="modal-body">
+                <div class="import-div">
+                    <input type="text" class="search-text" />
+                    <label for="modal-upload" class="modal-upload-button cursor-pointer">Browse</label>
+                    <input type="file" #csvfile id="modal-upload" accept=".csv" class="d-none"
+                        (change)="changeHandler($event)" />
+                </div>
+                <div class="pre-upload" [ngClass]="{'d-none':csvUploaded || csvError}">
+                    <span>Upload CSV File...</span>
+                </div>
+                <div class="pre-upload text-danger" [ngClass]="{'d-none':(!csvError && csvUploaded) || !csvUploaded}">
+                    <span>Invalid File</span>
+                </div>
+                <div [ngClass]="{'d-none':(!csvUploaded && !csvError) || csvError || !csvUploaded}">
+                    <div class="overflow">
+                        <table class="csv-table border-none ">
+                            <thead class="table-header">
+                                <tr>
+                                    <td *ngIf="!csvError"><input type="checkbox" class="cursor-pointer"
+                                            [(ngModel)]="checkedAll" (ngModelChange)="checkAll()" />
+                                    </td>
+                                    <td *ngFor="let field of csvRecords[0]">{{field}}</td>
+                                </tr>
+
+                            </thead>
+                            <tbody class="stripped-table">
+                                <tr *ngFor="let recordArray of csvRecords.slice(1,csvRecords.length),let i=index">
+                                    <td><input type="checkbox" (change)="handleCheckBox($event,i)"
+                                            class="cursor-pointer" [checked]="isChecked(i)" />
+                                    </td>
+                                    <td *ngFor="let record of recordArray">{{record}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <a href="../../../../../assets/files/user.csv" download>Download Sample File</a>
+                    <input type="button" [value]="buttonText" class="modal-import " (click)="handleImport()" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
